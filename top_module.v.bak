@@ -1,12 +1,11 @@
-module ledTest
+module top_module
 (
-    CLK, RSTn, LED_Out, BUZZER
+    CLK, RSTn, LED_Out
 );
 
     input CLK;
-	 input RSTn;
-	 output BUZZER;
-	 output [4:0]LED_Out;
+   input RSTn;
+	 output [3:0]LED_Out;
 	 
 	 /*******************************/
 	 
@@ -53,22 +52,8 @@ module ledTest
 	 );
 	 
 	 /**********************************/
-	 	 	 
-	 wire LED4_Out;
 	 
-	 led4_module U5
-	 (
-	     .CLK( CLK ),
-		  .RSTn( RSTn ),
-		  .LED_Out( LED4_Out )
-	 );
-	 
-	 /**********************************/
-	 
-	 wire BUZZER;
-	 assign BUZZER = 1;
-	 
-	 assign LED_Out = { LED4_Out, LED3_Out, LED2_Out, LED1_Out, LED0_Out };
+	 assign LED_Out = { LED3_Out, LED2_Out, LED1_Out, LED0_Out};
 	 
 	 /***********************************/
 
